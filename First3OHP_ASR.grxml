@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" version="1.0" xml:lang="en-US" tag-format="semantics/1.0" root="TOPRULE">
+   <rule id="TOPRULE">
+   <tag>out.TOPRULE = "";</tag>
+    <item repeat="3">
+            <item><ruleref uri="#singleDigit"/><tag>out.digit = rules.singleDigit.d;</tag></item>
+            <tag>out.TOPRULE = out.TOPRULE + out.digit;</tag>
+    </item>
+   </rule>
+   <rule id="singleDigit">
+      <one-of>
+         <item>
+            <one-of>
+               <item>zero</item>
+               <item>oh</item>
+            </one-of>
+            <tag>out.d="0";</tag>
+         </item>
+         <item>
+            <item>one</item>
+            <tag>out.d="1";</tag>
+         </item>
+         <item>
+            <item>two</item>
+            <tag>out.d="2";</tag>
+         </item>
+         <item>
+            <item>three</item>
+            <tag>out.d="3";</tag>
+         </item>
+         <item>
+            <item>four</item>
+            <tag>out.d="4";</tag>
+         </item>
+         <item>
+            <item>five</item>
+            <tag>out.d="5";</tag>
+         </item>
+         <item>
+            <item>six</item>
+            <tag>out.d="6";</tag>
+         </item>
+         <item>
+            <item>seven</item>
+            <tag>out.d="7";</tag>
+         </item>
+         <item>
+            <item>eight</item>
+            <tag>out.d="8";</tag>
+         </item>
+         <item>
+            <item>nine</item>
+            <item>niner</item>
+            <tag>out.d="9";</tag>
+         </item>
+      </one-of>
+   </rule>
+</grammar>

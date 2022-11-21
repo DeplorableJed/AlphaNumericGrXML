@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" 
+        version="1.0" 
+        xml:lang="en-US" 
+        mode="dtmf" 
+        tag-format="semantics/1.0" 
+        root="First3OHP">
+    <rule id="First3OHP">
+        <tag>out.TOPRULE = "";</tag>
+        <item repeat="3">
+            <item><ruleref uri="#CollectDigit"/><tag>out.digit = rules.CollectDigit.d;</tag></item>
+            <tag>out.TOPRULE = out.TOPRULE + out.digit;</tag>
+        </item>
+   </rule>
+   <rule id="CollectDigit">
+        <one-of>
+        <item> 0 <tag>out.d="0";</tag> </item>
+        <item> 1 <tag>out.d="1";</tag></item>
+        <item> 2 <tag>out.d="2";</tag></item>
+        <item> 3 <tag>out.d="3";</tag></item>
+        <item> 4 <tag>out.d="4";</tag></item>
+        <item> 5 <tag>out.d="5";</tag></item>
+        <item> 6 <tag>out.d="6";</tag></item>
+        <item> 7 <tag>out.d="7";</tag></item>
+        <item> 8 <tag>out.d="8";</tag></item>
+        <item> 9 <tag>out.d="9";</tag></item>
+        </one-of>
+   </rule>
+</grammar>
